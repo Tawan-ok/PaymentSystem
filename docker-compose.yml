@@ -1,0 +1,15 @@
+version: '1.0'
+services:
+  payment-service:
+    image: payment-system
+    build: .
+    ports:
+      - "8080:8080"
+  db:
+    image: postgres
+    environment:
+        POSTGRES_DB: payment_db
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
